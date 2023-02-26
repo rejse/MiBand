@@ -2,7 +2,7 @@
 	<meta name="viewport" content="width=device-width,user-scalable=no">
     <title>群规</title>
 	<!--[if lt IE 9]>
-    <script type="text/javascript" src="https://rejse.github.io/mipad1/assets/js/01.js"></script>
+    <script type="text/javascript" src="https://rejse.github.io/MiBand/assets/js/01.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="https://rejse.github.io/MiBand/assets/css/01.css">
     <link rel="stylesheet" href="https://rejse.github.io/MiBand/assets/css/02.css">
@@ -74,21 +74,54 @@
 </div>
 <footer id="footer">
 <div class="container">
+随便弄来玩玩的😋<!-- 网站累计运行时间 -->
 © 2018-2023 <a rel="nofollow" href="https://rejse.github.io/MiBand">旅行(●'◡'●)ﾉ❤</a>·<br/>
-本站已安全运行了
-<b style="color: red;"><strong> <script language="JavaScript" type="text/javascript">
-var urodz = new Date("10/25/2018"); var now = new Date();
-var ile = now.getTime() - urodz.getTime(); var dni = Math.floor(ile / (1000 * 60 * 60 * 24));
-document.write(+dni) </script> </strong></b>天
+<!-- 网站累计运行时间 -->
+<span style="color: #999;"> 本站已安全运行：<span  id="sitetime" style="color:#999"></span>
+<script>
+function siteTime(){
+window.setTimeout("siteTime()", 1000);
+var seconds = 1000
+var minutes = seconds * 60
+var hours = minutes * 60
+var days = hours * 24
+var years = days * 365
+var today = new Date()
+var todayYear = today.getFullYear()
+var todayMonth = today.getMonth()
+var todayDate = today.getDate()
+var todayHour = today.getHours()
+var todayMinute = today.getMinutes()
+var todaySecond = today.getSeconds()
+/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+var t1 = Date.UTC(2018,10,25,0,0,00)//北京时间2017-8-21 23:32:13
+var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond)
+var diff = t2-t1
+var diffYears = Math.floor(diff/years)
+var diffDays = Math.floor((diff/days)-diffYears*365)
+var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours)
+var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes)
+var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds)
+document.getElementById("sitetime").innerHTML=""+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒"
 
-<title>JS时间</title>
+}
+siteTime()
+</script>
+<!-- JS时间，当前日期时间 -->
  <script language=Javascript> 
   function time(){
     //获得显示时间的div
     t_div = document.getElementById('showtime');
    var now=new Date()
     //替换div内容 
-   t_div.innerHTML = "搞机别熬夜！"+now.getFullYear()
+   t_div.innerHTML = "现在是"+now.getFullYear()
     +"年"+(now.getMonth()+1)+"月"+now.getDate()
     +"日"+now.getHours()+"时"+now.getMinutes()
     +"分"+now.getSeconds()+"秒";

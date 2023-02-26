@@ -97,8 +97,9 @@
 <div class="container">
 随便弄来玩玩的😋<!-- 网站累计运行时间 -->
 © 2018-2023 <a rel="nofollow" href="https://rejse.github.io/MiBand">旅行(●'◡'●)ﾉ❤</a>·<br/>
-
-<script language=javascript>
+<!-- 网站累计运行时间 -->
+<p style="color:#999;">本站已安全运行：<span id="sitetime" style="color:#999"></span></p>
+<script>
 function siteTime(){
 window.setTimeout("siteTime()", 1000);
 var seconds = 1000
@@ -106,7 +107,6 @@ var minutes = seconds * 60
 var hours = minutes * 60
 var days = hours * 24
 var years = days * 365
- 
 var today = new Date()
 var todayYear = today.getFullYear()
 var todayMonth = today.getMonth()
@@ -114,31 +114,30 @@ var todayDate = today.getDate()
 var todayHour = today.getHours()
 var todayMinute = today.getMinutes()
 var todaySecond = today.getSeconds()
- 
 /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
-year - 作为date对象的年份，为4位年份值
-month - 0-11之间的整数，做为date对象的月份
-day - 1-31之间的整数，做为date对象的天数
-hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
-minutes - 0-59之间的整数，做为date对象的分钟数
-seconds - 0-59之间的整数，做为date对象的秒数
-microseconds - 0-999之间的整数，做为date对象的毫秒数 */
-var t1 = Date.UTC(2018,10,25,0,0,00)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+var t1 = Date.UTC(2018,10,25,0,0,00)//北京时间2017-8-21 23:32:13
 var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond)
 var diff = t2-t1
- 
 var diffYears = Math.floor(diff/years)
 var diffDays = Math.floor((diff/days)-diffYears*365)
 var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours)
 var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes)
 var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds)
-document.getElementById("sitetime").innerHTML="  本站已安全运行了  "+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒"
+document.getElementById("sitetime").innerHTML=""+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒"
+
 }
 siteTime()
 </script>
- 
-<a id="sitetime"></a>
-
+     </div>
+   </div>
+</div>
 <title>JS时间</title><!-- 当前日期时间 -->
  <script language=Javascript> 
   function time(){
@@ -158,7 +157,9 @@ siteTime()
 
 <body  onload="time()">
 <div id="showtime"></div>
-
+     </div>
+   </div>
+</div>
 <div id="eagle-drag-images" style="position: fixed; top: -100000px;"></div>
 </body>
 </html>
